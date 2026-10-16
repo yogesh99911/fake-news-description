@@ -9,9 +9,7 @@ import {
   HelpCircle,
   FileText,
   Lock,
-  Database,
   ExternalLink,
-  ChevronRight,
   UserCheck,
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.js';
@@ -76,7 +74,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
           <div className="text-center max-w-3xl mx-auto space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 text-xs font-semibold uppercase tracking-wider">
               <Sparkles size={14} className="text-teal-400" />
-              BSc Computer Science Final Year Academic Project
+              AI-ASSISTED NEWS CREDIBILITY CHECKER
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
@@ -87,7 +85,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl mx-auto">
-              TruthLens AI combines a configurable language model, journalistic heuristics, and relational entity modeling to assess news claims and identify sensationalism. Model output is not live source verification.
+              TruthLens AI reviews news claims with AI-assisted analysis and related web sources. Results are estimates, not proof of truth.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
@@ -99,13 +97,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                 Analyze News Now
               </button>
 
-              <button
-                onClick={() => onNavigate('about')}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors flex items-center justify-center gap-2"
-              >
-                <span>View UML Architecture & Methodology</span>
-                <ChevronRight size={16} />
-              </button>
             </div>
 
             {/* Quick Demo Credentials Box for Examiners & Viva */}
@@ -149,7 +140,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             Three Steps to Factual Clarity
           </h3>
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">
-            Every submission passes through a structured NLP evaluation pipeline with relational persistence.
+            Each article is reviewed and saved so you can return to its result later.
           </p>
         </div>
 
@@ -274,7 +265,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
 
             <div className="flex items-center justify-between text-xs pt-2">
               <span className="text-slate-400 italic">
-                Demonstration sample stored in academic database
+                Example result preview
               </span>
               <button
                 onClick={() => onNavigate('analyze')}
@@ -294,7 +285,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             System Features
           </h2>
           <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-            Built for Academic Rigor & Transparency
+            Clear Insights for Better News Decisions
           </h3>
         </div>
 
@@ -323,17 +314,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             </p>
           </div>
 
-          <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-2">
-            <div className="w-9 h-9 rounded-lg bg-indigo-100 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
-              <Database size={18} />
-            </div>
-            <h4 className="font-bold text-sm text-slate-900 dark:text-white">
-              UML Relational Integrity
-            </h4>
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Implements User 1:N Article, Article 1:1 Prediction, and Prediction 1:N Feedback with cascading deletes and zero orphan records.
-            </p>
-          </div>
 
           <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-2">
             <div className="w-9 h-9 rounded-lg bg-purple-100 dark:bg-purple-950/70 text-purple-600 dark:text-purple-400 flex items-center justify-center">
