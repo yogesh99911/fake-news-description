@@ -55,7 +55,7 @@ ${content}
   }
 
   const responseBody = payload?.result?.response;
-  const rawText = typeof responseBody === 'string' ? responseBody.trim() : '';
+  const rawText = typeof responseBody === 'string' ? responseBody.trim() : responseBody && typeof responseBody === 'object' ? JSON.stringify(responseBody) : '';
   if (!rawText) {
     throw new Error('Cloudflare Workers AI returned an empty response.');
   }
