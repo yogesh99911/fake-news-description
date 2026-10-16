@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: truthlens-api
+    runtime: node
+    plan: free
+    buildCommand: bun install --frozen-lockfile
+    startCommand: bun run start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: FRONTEND_ORIGINS
+        value: https://yogesh99911.github.io
+      - key: GEMINI_API_KEY
+        sync: false
