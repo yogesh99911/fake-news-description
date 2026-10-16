@@ -1,7 +1,7 @@
 # TruthLens AI – AI-Based Fake News Detection System
 **BSc Computer Science Final Year Project**
 
-TruthLens AI is an end-to-end, academic-grade web platform designed for AI-assisted news credibility analysis, factual claim verification, and algorithmic transparency. Powered by Google Gemini 3.8 Flash, Express.js, React 19, TypeScript, and Tailwind CSS, the platform evaluates news articles, extracts discrete claims, detects sensationalism and deceptive rhetoric, and produces a structured credibility assessment.
+TruthLens AI is an academic web platform designed for AI-assisted news credibility analysis and algorithmic transparency. Powered by Express.js, React 19, TypeScript, Tailwind CSS, and a configurable AI provider, the platform evaluates supplied article text, extracts claims, detects sensationalism, and produces a structured assessment. Model output is not independent live-source verification.
 
 ---
 
@@ -57,7 +57,7 @@ For testing and examination presentations, TruthLens includes seeded demonstrati
 ### Prerequisites
 - Node.js (v20+ recommended)
 - npm (v9+)
-- Google Gemini API Key (`GEMINI_API_KEY`)
+- An optional AI provider: Gemini (`GEMINI_API_KEY`) or Cloudflare Workers AI (`CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN`). With neither configured, the app runs in an honest no-AI demo mode.
 
 ### Installation & Run Commands
 ```bash

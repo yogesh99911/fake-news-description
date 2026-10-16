@@ -21,11 +21,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed max-w-md">
-              TruthLens AI is an academic full-stack Computer Science capstone research platform designed for automated factual credibility scoring and news verification using Google Gemini 3.8 Flash, formal UML data modeling, and transparent heuristic auditing.
+              TruthLens AI is an academic full-stack Computer Science capstone research platform for AI-assisted credibility analysis, formal UML data modeling, and transparent heuristic auditing. Model assessments are not independent proof of truth.
             </p>
             <div className="pt-2 flex items-center gap-2 text-xs text-slate-400">
               <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>Gemini 3.8 Flash Engine Connected • REST API Operational</span>
+              <span>REST API Operational • AI provider depends on deployment configuration</span>
             </div>
           </div>
 

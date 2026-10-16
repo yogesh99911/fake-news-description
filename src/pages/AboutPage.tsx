@@ -291,7 +291,7 @@ export const AboutPage: React.FC = () => {
               Detection Pipeline & AI Engine Methodology
             </h2>
             <p className="text-xs text-slate-500 mt-1">
-              How submitted text is ingested, crawled, tokenized, and evaluated by Google Gemini 3.8 Flash.
+              How submitted text is ingested, crawled, tokenized, and evaluated by the configured AI provider.
             </p>
           </div>
 

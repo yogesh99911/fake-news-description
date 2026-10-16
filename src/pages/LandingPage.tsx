@@ -87,7 +87,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl mx-auto">
-              TruthLens AI combines Google Gemini 3.8 Flash, rigorous journalistic heuristics, and relational entity modeling to dissect news claims, identify sensationalism, and evaluate factual credibility with full auditability.
+              TruthLens AI combines a configurable language model, journalistic heuristics, and relational entity modeling to assess news claims and identify sensationalism. Model output is not live source verification.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
@@ -174,7 +174,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               AI Analysis & Grounding
             </h4>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Gemini 3.8 Flash dissects verifiable assertions, checks internal consistency, detects sensationalism, and evaluates against known facts.
+                  The configured AI model reviews assertions, internal consistency, and sensationalism. It may rely on learned knowledge and does not independently verify live sources.
             </p>
           </div>
 

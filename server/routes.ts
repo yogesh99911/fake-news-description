@@ -10,6 +10,7 @@ import {
   AuthenticatedRequest,
 } from './auth.js';
 import { analyzeNewsWithGemini } from './gemini.js';
+import { analyzeNewsWithCloudflare } from './cloudflare.js';
 import { extractArticleFromUrl } from './urlExtractor.js';
 import { FeedbackCategory, InputMode, PredictedLabel } from './types.js';
 
@@ -181,12 +182,16 @@ apiRouter.post('/news', authenticate(db), async (req: AuthenticatedRequest, res:
       mode
     );
 
-    // 2. Perform AI analysis when configured. The free hosted demo must stay
-    // usable without asking users to enable paid Google Cloud billing. In that
-    // case, save an explicit unverified result instead of inventing a verdict.
+    // 2. Use the configured AI service. Cloudflare Workers AI's free daily
+    // allocation can be used without enabling paid Google Cloud billing.
+    // If no provider is configured, save an explicit unverified demo result.
     let analysisResult;
+    const hasCloudflare = Boolean(
+      process.env.CLOUDFLARE_ACCOUNT_ID?.trim() && process.env.CLOUDFLARE_API_TOKEN?.trim()
+    );
     const hasGeminiKey = Boolean(process.env.GEMINI_API_KEY?.trim());
-    if (!hasGeminiKey) {
+    const hasAiProvider = hasCloudflare || hasGeminiKey;
+    if (!hasAiProvider) {
       analysisResult = {
         predicted_label: 'NEEDS VERIFICATION' as PredictedLabel,
         confidence_score: 0,
@@ -205,7 +210,9 @@ apiRouter.post('/news', authenticate(db), async (req: AuthenticatedRequest, res:
       };
     } else {
       try {
-        analysisResult = await analyzeNewsWithGemini(article.title, article.content, article.source_url);
+        analysisResult = hasCloudflare
+          ? await analyzeNewsWithCloudflare(article.title, article.content, article.source_url)
+          : await analyzeNewsWithGemini(article.title, article.content, article.source_url);
       } catch (aiErr: any) {
         // If AI failed, delete the newly created article to maintain consistency (no orphan articles without predictions)
         db.deleteArticle(article.news_id, user.user_id);
@@ -228,7 +235,7 @@ apiRouter.post('/news', authenticate(db), async (req: AuthenticatedRequest, res:
       verification_steps: analysisResult.verification_steps,
       limitations: analysisResult.limitations,
       model_version: analysisResult.model_version,
-      is_demo: !hasGeminiKey || !!is_demo,
+      is_demo: !hasAiProvider || !!is_demo,
     });
 
     res.status(201).json({
