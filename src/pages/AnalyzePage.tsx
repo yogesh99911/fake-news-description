@@ -185,7 +185,7 @@ export const AnalyzePage: React.FC<AnalyzePageProps> = ({
           Analyze News Credibility
         </h1>
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2">
-          Submit news content to identify verifiable claims, sensationalized language, and receive an AI-assisted credibility verdict.
+          Free demo mode: submit a story to see the app workflow. Without an AI key, it is saved as “Needs Verification” and is not fact-checked.
         </p>
       </div>
 

@@ -181,17 +181,39 @@ apiRouter.post('/news', authenticate(db), async (req: AuthenticatedRequest, res:
       mode
     );
 
-    // 2. Perform AI Analysis via Gemini Service
+    // 2. Perform AI analysis when configured. The free hosted demo must stay
+    // usable without asking users to enable paid Google Cloud billing. In that
+    // case, save an explicit unverified result instead of inventing a verdict.
     let analysisResult;
-    try {
-      analysisResult = await analyzeNewsWithGemini(article.title, article.content, article.source_url);
-    } catch (aiErr: any) {
-      // If AI failed, delete the newly created article to maintain consistency (no orphan articles without predictions)
-      db.deleteArticle(article.news_id, user.user_id);
-      res.status(502).json({
-        error: `AI Analysis failed: ${aiErr.message}. The submission was not recorded. Please check your API key or retry.`,
-      });
-      return;
+    const hasGeminiKey = Boolean(process.env.GEMINI_API_KEY?.trim());
+    if (!hasGeminiKey) {
+      analysisResult = {
+        predicted_label: 'NEEDS VERIFICATION' as PredictedLabel,
+        confidence_score: 0,
+        summary: 'No AI verdict was generated. This free demo has no AI provider connected, so this label does not mean the claim is true or false.',
+        explanation: 'Your submission was saved, but it was not checked against news sources or fact-checking records. This result only demonstrates the app flow; it is not a fact-check.',
+        key_claims: [],
+        warning_signs: ['No AI analysis or independent source check was performed.'],
+        evidence_sources: [],
+        verification_steps: [
+          'Check the claim against an official primary source.',
+          'Look for independent reporting from multiple reputable news organizations.',
+          'Do not treat this demo result as confirmation or a debunk.',
+        ],
+        limitations: ['Free demo mode: Gemini API key is not configured; no factual assessment was made.'],
+        model_version: 'free-demo-no-ai',
+      };
+    } else {
+      try {
+        analysisResult = await analyzeNewsWithGemini(article.title, article.content, article.source_url);
+      } catch (aiErr: any) {
+        // If AI failed, delete the newly created article to maintain consistency (no orphan articles without predictions)
+        db.deleteArticle(article.news_id, user.user_id);
+        res.status(502).json({
+          error: `AI Analysis failed: ${aiErr.message}. The submission was not recorded. Please retry later.`,
+        });
+        return;
+      }
     }
 
     // 3. Create 1:1 Prediction entity
@@ -206,7 +228,7 @@ apiRouter.post('/news', authenticate(db), async (req: AuthenticatedRequest, res:
       verification_steps: analysisResult.verification_steps,
       limitations: analysisResult.limitations,
       model_version: analysisResult.model_version,
-      is_demo: !!is_demo,
+      is_demo: !hasGeminiKey || !!is_demo,
     });
 
     res.status(201).json({

@@ -44,6 +44,7 @@ export const AnalysisResultPage: React.FC<AnalysisResultPageProps> = ({
   const verificationSteps = Array.isArray(prediction?.verification_steps) ? prediction.verification_steps : [];
   const limitations = Array.isArray(prediction?.limitations) ? prediction.limitations : [];
   const evidenceSources = Array.isArray(prediction?.evidence_sources) ? prediction.evidence_sources : [];
+  const isFreeDemo = prediction?.model_version === 'free-demo-no-ai';
 
   // Copy structured report to clipboard
   const handleCopySummary = () => {
@@ -136,11 +137,11 @@ ${limitations.length > 0 ? limitations.map((l) => `- ${l}`).join('\n') : '- Auto
             <div className="space-y-3">
               <div className="flex items-center gap-2.5">
                 <span className="text-xs font-semibold uppercase tracking-wider text-teal-400">
-                  Model Credibility Assessment
+                  {isFreeDemo ? 'Free Demo Status' : 'Model Credibility Assessment'}
                 </span>
                 {prediction.is_demo && (
                   <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-sm bg-purple-500/20 text-purple-300 border border-purple-500/40">
-                    Academic Demo
+                    {isFreeDemo ? 'Free Demo · No AI' : 'Academic Demo'}
                   </span>
                 )}
               </div>
@@ -158,13 +159,20 @@ ${limitations.length > 0 ? limitations.map((l) => `- ${l}`).join('\n') : '- Auto
             </div>
 
             {/* Confidence Gauge Widget */}
-            <div className="md:w-72 bg-slate-800/80 p-4 rounded-xl border border-slate-700/80 backdrop-blur-xs shrink-0">
-              <ConfidenceMeter
-                score={prediction.confidence_score}
-                label={prediction.predicted_label}
-                showDetails={true}
-              />
-            </div>
+            {isFreeDemo ? (
+              <div className="md:w-72 bg-slate-800/80 p-4 rounded-xl border border-slate-700/80 shrink-0">
+                <p className="text-sm font-semibold text-amber-300">AI confidence unavailable</p>
+                <p className="text-xs text-slate-300 mt-2">No AI service or source check ran. “Needs verification” is not a verdict.</p>
+              </div>
+            ) : (
+              <div className="md:w-72 bg-slate-800/80 p-4 rounded-xl border border-slate-700/80 backdrop-blur-xs shrink-0">
+                <ConfidenceMeter
+                  score={prediction.confidence_score}
+                  label={prediction.predicted_label}
+                  showDetails={true}
+                />
+              </div>
+            )}
           </div>
         </div>
 
