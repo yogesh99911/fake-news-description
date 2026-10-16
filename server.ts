@@ -12,6 +12,28 @@ const __dirname = path.dirname(__filename);
 async function startServer() {
   const app = express();
   const PORT = parseInt(process.env.PORT || '3000', 10);
+  const allowedOrigins = new Set(
+    (process.env.FRONTEND_ORIGINS || 'https://yogesh99911.github.io')
+      .split(',')
+      .map((origin) => origin.trim())
+      .filter(Boolean),
+  );
+
+  // Allow the GitHub Pages frontend to call this API.
+  app.use((req, res, next) => {
+    const origin = req.headers.origin;
+    if (origin && allowedOrigins.has(origin)) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+      res.setHeader('Vary', 'Origin');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
+    }
+    if (req.method === 'OPTIONS') {
+      res.sendStatus(204);
+      return;
+    }
+    next();
+  });
 
   // Security & body parsing
   app.use(express.json({ limit: '10mb' }));
@@ -50,7 +72,7 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`[TruthLens AI] Server running at http://0.0.0.0:${PORT}`);
+    console.log('[TruthLens AI] Server running at http://0.0.0.0:' + PORT);
   });
 }
 
