@@ -4,7 +4,7 @@ import {
   SearchCheck,
   LayoutDashboard,
   History,
-  BookOpen,
+
   LogOut,
   User as UserIcon,
   Shield,
@@ -108,17 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate }) => {
               </>
             )}
 
-            <button
-              onClick={() => handleNav('about')}
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 ${
-                currentView === 'about'
-                  ? 'bg-slate-800 text-teal-300 font-semibold'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
-              }`}
-            >
-              <BookOpen size={15} />
-              Methodology & UML
-            </button>
+            
 
             {user?.role === 'admin' && (
               <button
@@ -225,13 +215,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate }) => {
               </button>
             </>
           )}
-          <button
-            onClick={() => handleNav('about')}
-            className="w-full text-left px-3 py-2 rounded-lg text-sm text-slate-200 hover:bg-slate-800 flex items-center gap-2"
-          >
-            <BookOpen size={16} />
-            Methodology & UML
-          </button>
+          
           {user?.role === 'admin' && (
             <button
               onClick={() => handleNav('admin')}
