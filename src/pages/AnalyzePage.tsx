@@ -185,7 +185,7 @@ export const AnalyzePage: React.FC<AnalyzePageProps> = ({
           Analyze News Credibility
         </h1>
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2">
-          The AI reviews the supplied text but does not search the live web. Without an AI provider configured, the free demo saves it as “Needs Verification” without an AI verdict.
+          With an AI provider configured, TruthLens analyzes the supplied text. When Tavily is configured, it also searches the live web and includes relevant source snippets. Results and model verdicts can be incomplete; open the linked sources and verify important claims yourself. Without an AI provider, submissions are saved as “Needs Verification” with no AI verdict.
         </p>
       </div>
 
