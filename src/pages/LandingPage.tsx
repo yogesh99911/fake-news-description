@@ -10,9 +10,7 @@ import {
   FileText,
   Lock,
   ExternalLink,
-  UserCheck,
 } from 'lucide-react';
-import { useAuth } from '../context/AuthContext.js';
 import { VerdictBadge } from '../components/VerdictBadge.js';
 
 interface LandingPageProps {
@@ -20,9 +18,7 @@ interface LandingPageProps {
 }
 
 export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
-  const { user, demoLogin } = useAuth();
   const [activeTab, setActiveTab] = useState<'real' | 'fake' | 'verify'>('real');
-  const [quickLoginLoading, setQuickLoginLoading] = useState(false);
 
   const sampleCards = {
     real: {
@@ -49,18 +45,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
       signs: ['Anonymous Telegram leak source', 'Missing official city clerk voting records', 'Spokespeople have not yet issued confirmation'],
       source: 'Local Leaks Messaging Channel',
     },
-  };
-
-  const handleQuickDemo = async (role: 'student' | 'admin') => {
-    setQuickLoginLoading(true);
-    try {
-      await demoLogin(role);
-      onNavigate('dashboard');
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setQuickLoginLoading(false);
-    }
   };
 
   return (
@@ -99,33 +83,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
 
             </div>
 
-            {/* Quick Demo Credentials Box for Examiners & Viva */}
-            <div className="mt-8 pt-6 border-t border-slate-800/80 max-w-xl mx-auto">
-              <p className="text-xs text-slate-400 uppercase tracking-wider font-semibold mb-3 flex items-center justify-center gap-1.5">
-                <UserCheck size={14} className="text-teal-400" />
-                Examiner & Presentation Quick-Access
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-2">
-                <button
-                  type="button"
-                  disabled={quickLoginLoading}
-                  onClick={() => handleQuickDemo('student')}
-                  className="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800/90 hover:bg-slate-700 text-teal-300 border border-slate-700 flex items-center gap-2 transition-colors disabled:opacity-50"
-                >
-                  <span className="w-2 h-2 rounded-full bg-teal-400"></span>
-                  Sign In as Researcher (student@truthlens.ai)
-                </button>
-                <button
-                  type="button"
-                  disabled={quickLoginLoading}
-                  onClick={() => handleQuickDemo('admin')}
-                  className="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-purple-950/70 hover:bg-purple-900 text-purple-300 border border-purple-800 flex items-center gap-2 transition-colors disabled:opacity-50"
-                >
-                  <span className="w-2 h-2 rounded-full bg-purple-400"></span>
-                  Sign In as Admin (admin@truthlens.ai)
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </section>
