@@ -35,7 +35,7 @@ The system strictly models the entities specified in the project Class Diagram a
 
 - **Frontend:** React 19, TypeScript, Vite, Tailwind CSS v4, Lucide React icons, Recharts (classification distribution & timeline charts).
 - **Backend API:** Node.js, Express, TypeScript (`tsx server.ts`).
-- **AI Engine:** Google Gemini API (`gemini-3.8-flash`) via the modern `@google/genai` TypeScript SDK with strict JSON schema constraints.
+- **AI Engine:** Optional Google Gemini or Cloudflare Workers AI provider with structured JSON responses.
 - **Persistence Engine:** JSON relational database with atomic file transactions (`data/truthlens.json`), foreign key integrity, and cascading deletions.
 - **Security & Crawling:** SSRF-protected URL crawler blocking RFC-1918 subnets, cloud metadata IPs, and localhost; PBKDF2 password hashing; timing-safe comparisons; Bearer token authorization.
 

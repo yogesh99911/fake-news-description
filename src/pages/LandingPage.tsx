@@ -356,7 +356,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             Ready to evaluate news credibility?
           </h3>
           <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
-            Experience our automated detection pipeline with real Gemini AI inference, full historical persistence, and interactive charts.
+            Experience the AI-assisted analysis workflow, historical persistence, and interactive charts.
           </p>
           <div className="pt-2">
             <button

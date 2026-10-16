@@ -306,7 +306,7 @@ export const AboutPage: React.FC = () => {
 
             <div className="p-5 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-800 space-y-2">
               <span className="text-xs font-bold text-teal-600 dark:text-teal-400">Step 2</span>
-              <h3 className="font-bold text-sm text-slate-900 dark:text-white">Structured Gemini Prompting</h3>
+              <h3 className="font-bold text-sm text-slate-900 dark:text-white">Structured AI Prompting</h3>
               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                 The article is enclosed within secure untrusted XML tags (`&lt;article_to_analyze&gt;`) to defend against prompt injection. A temperature of 0.2 ensures deterministic reasoning across factual claims.
               </p>
