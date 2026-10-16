@@ -46,7 +46,7 @@ export const ConfidenceMeter: React.FC<ConfidenceMeterProps> = ({
 
       {showDetails && (
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1.5 flex items-center gap-1">
-              <span>Model-estimated confidence metric • AI assessment, not live source verification</span>
+              <span>Model-estimated confidence • web sources may inform this assessment when available; not a calibrated probability or proof.</span>
         </p>
       )}
     </div>
