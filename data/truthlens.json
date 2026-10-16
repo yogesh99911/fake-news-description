@@ -1,0 +1,385 @@
+{
+  "users": [
+    {
+      "user_id": "usr_admin_001",
+      "name": "System Administrator",
+      "email": "admin@truthlens.ai",
+      "password_hash": "82703e3a907a2410464b363eee5cdb61af21da04e0a0a38ec20988113a39d77053f940d94c2528e5ba50c0bd1cf9e8b07d4c66b3bbaa4bc34999d878a0318577",
+      "salt": "a132f749615926da8634ce365bcacfa8",
+      "role": "admin",
+      "created_at": "2026-09-16T07:05:02.838Z"
+    },
+    {
+      "user_id": "usr_demo_002",
+      "name": "Academic Researcher",
+      "email": "student@truthlens.ai",
+      "password_hash": "c9f554d02a954a100b6755165581f7c9238e7f7cf1e61398ad9b7a492b505c3f2158c59dfaddd59bb07fe90975bde3baacd32d9a259b759e0f291955860d9d5f",
+      "salt": "ca8153c1bb8971fea41bd8857211c301",
+      "role": "user",
+      "created_at": "2026-10-02T07:05:02.920Z"
+    },
+    {
+      "user_id": "usr_d1769c85-9aea-4336-b6d0-dac69acf6858",
+      "name": "Alice Tester",
+      "email": "alice.test@university.edu",
+      "password_hash": "a328572f4d453049c97eb42c7b30c05fd34e5a96df769db8825e9ad04438ef0c4cd668c91208e690d76bdd51522a03e090a97767528105ae7c3ae152fcf640a0",
+      "salt": "7814fc7f35ca086503ee676f01e507c1",
+      "role": "user",
+      "created_at": "2026-10-16T07:05:03.167Z"
+    },
+    {
+      "user_id": "usr_edaa4805-d158-41d7-b123-c33a778ac87b",
+      "name": "yogesh jaiswar",
+      "email": "yj981796@gmail.com",
+      "password_hash": "3728c3abd68a68842888c6930ed098e952204f69546d5e6d503813d962f5e1f15a8e752946ca1944e31637b299b77f1f33d839e6b57e0c20872a059b6a11a81c",
+      "salt": "622bee9223e3e0cba77ae5a6dee60b6b",
+      "role": "user",
+      "created_at": "2026-10-16T07:23:46.450Z"
+    },
+    {
+      "user_id": "usr_adabcf00-ad01-4b03-95ae-6d7f1b1660bd",
+      "name": "Alice Tester",
+      "email": "alice.test@university.edu",
+      "password_hash": "11cd3121a79679666f7e03effb0ad69d089c6267ba5a20e764e6066f3be8eeee117472eab6604d0f4ec756dabd8ff318568f9759a0558554c73836b70d1e640e",
+      "salt": "e1f49a671f689c48378f51e9944e21c2",
+      "role": "user",
+      "created_at": "2026-10-16T07:47:42.616Z"
+    },
+    {
+      "user_id": "usr_4407b92c-6f63-4443-9366-2eb3eff77c7d",
+      "name": "Alice Tester",
+      "email": "alice.test@university.edu",
+      "password_hash": "5e3daa7b144590dc5a28db0531be06d9c66a1f6bd5b71a033e02245bf11aa6d59ccaadce9ad6c08b256b19f264dc62031d65db267f921bb66c08c0f8facb4731",
+      "salt": "aa6c04a532f5b0f385c516061c95b90c",
+      "role": "user",
+      "created_at": "2026-10-16T07:57:11.346Z"
+    }
+  ],
+  "articles": [
+    {
+      "news_id": "art_sample_real_01",
+      "user_id": "usr_demo_002",
+      "title": "NASA James Webb Space Telescope Detects Water Vapor in Rocky Planet Atmosphere System",
+      "content": "Astronomers using the James Webb Space Telescope (JWST) have confirmed spectral evidence of atmospheric water vapor around rocky exoplanet GJ 486 b. The findings, published in leading peer-reviewed astrophysical journals, detail how the NIRSpec instrument observed transmission spectra during repeated stellar transits. NASA and European Space Agency scientists noted that while stellar contamination cannot be completely ruled out, corroborating ground-based observations strongly support the planetary atmospheric signature.",
+      "source_name": "NASA Jet Propulsion Laboratory & Nature Astronomy",
+      "source_url": "https://www.nasa.gov/mission_pages/webb/main/index.html",
+      "input_mode": "paste",
+      "submission_date": "2026-10-11T07:05:02.920Z"
+    },
+    {
+      "news_id": "art_sample_fake_02",
+      "user_id": "usr_demo_002",
+      "title": "Secret Miracle Fruit Discovered in Rainforest Cures All Stage 4 Cancers in 48 Hours, Big Pharma Bans It",
+      "content": "A miraculous berry discovered deep in the Amazon basin known as the \"Miracle Sunberry\" completely eliminates 100% of stage 4 malignant tumors within two days according to an anonymous whistleblower doctor who had to flee the country. Mainstream hospitals and pharmaceutical executives have colluded with world governments to destroy all plantations and censor medical journals to protect chemotherapy profits. Doctors are threatening anyone who consumes this ancient extract!",
+      "source_name": "Viral Health Secrets Blog",
+      "source_url": "http://daily-miracle-breakthroughs.unverified.org",
+      "input_mode": "paste",
+      "submission_date": "2026-10-13T07:05:02.920Z"
+    },
+    {
+      "news_id": "art_sample_verify_03",
+      "user_id": "usr_demo_002",
+      "title": "City Council Approves Emergency Ordinance for Subterranean Geothermal District Heating Project",
+      "content": "Local municipal sources report that the metropolitan regional council held a closed-door midnight meeting to authorize $450 million in municipal bonds for a pilot deep-borehole geothermal heating grid across the eastern district. Unverified social media leaks claim construction begins next month under emergency powers without public environmental impact review. Official municipal public relation spokespeople have neither published meeting minutes nor denied ongoing exploratory feasibility studies.",
+      "source_name": "Metro Insider Anonymous Telegram Channel",
+      "input_mode": "paste",
+      "submission_date": "2026-10-15T07:05:02.920Z"
+    },
+    {
+      "news_id": "art_8189c239-847a-423c-a427-5bfb2d47ad06",
+      "user_id": "usr_edaa4805-d158-41d7-b123-c33a778ac87b",
+      "title": "cjp is america funded",
+      "content": "cjp is backed by us based george soros",
+      "input_mode": "paste",
+      "submission_date": "2026-10-16T07:25:23.331Z"
+    },
+    {
+      "news_id": "art_1512069d-dc94-4e23-9c7c-a373f05f8d79",
+      "user_id": "usr_edaa4805-d158-41d7-b123-c33a778ac87b",
+      "title": "Secret Amazon Rainforest Berry Cures All Stage 4 Cancers in 48 Hours, Banned by Big Pharma",
+      "content": "A miraculous plant discovered in the Amazon basin known as the \"Miracle Sunberry\" completely eliminates 100% of stage 4 malignant tumors within two days according to an anonymous whistleblower doctor who had to flee the country. Mainstream hospitals and pharmaceutical executives have colluded with world governments to destroy all plantations and censor medical journals to protect chemotherapy profits. Doctors are threatening anyone who consumes this ancient extract! Share this before it gets deleted!",
+      "input_mode": "paste",
+      "submission_date": "2026-10-16T07:32:21.267Z"
+    },
+    {
+      "news_id": "art_b14374be-6f15-4d7f-acd1-7c1ec57b859d",
+      "user_id": "usr_admin_001",
+      "title": "ISRO Chandrayaan-3 Successfully Lands on Moon",
+      "content": "The Indian Space Research Organisation (ISRO) successfully accomplished a soft landing of the Chandrayaan-3 Vikram lander on the southern polar region of the Moon on August 23, 2023. Telemetry data confirmed that the powered descent phase executed flawlessly from an altitude of 30 kilometers down to the lunar surface near 69.37 degrees South latitude.",
+      "source_name": "ISRO",
+      "input_mode": "paste",
+      "submission_date": "2026-10-16T07:57:30.557Z"
+    }
+  ],
+  "predictions": [
+    {
+      "prediction_id": "pred_sample_real_01",
+      "news_id": "art_sample_real_01",
+      "user_id": "usr_demo_002",
+      "predicted_label": "REAL",
+      "confidence_score": 0.94,
+      "summary": "Consistent with verified peer-reviewed publications and official announcements from NASA/ESA astronomical missions.",
+      "explanation": "The article accurately reflects authentic scientific literature and verified press releases from NASA and ESA researchers. The terminology aligns with standard astrophysics protocols (transmission spectroscopy, NIRSpec instrument, transit photometry). Claims are framed with appropriate scientific caveats regarding potential stellar contamination rather than sensationalized guarantees.",
+      "key_claims": [
+        "James Webb Space Telescope observed transmission spectra of exoplanet GJ 486 b",
+        "Spectroscopic data indicated presence of water vapor signatures",
+        "Official findings were documented through NASA and European Space Agency archives"
+      ],
+      "warning_signs": [
+        "None identified. Reporting maintains balanced scientific caution."
+      ],
+      "evidence_sources": [
+        {
+          "title": "NASA Exoplanet Exploration Archive & JWST Science Releases",
+          "url": "https://exoplanets.nasa.gov",
+          "credibility_note": "Primary institutional space research agency with public raw telemetry archives."
+        },
+        {
+          "title": "Nature Astronomy Peer-Reviewed Papers",
+          "credibility_note": "High-impact indexed academic journal."
+        }
+      ],
+      "verification_steps": [
+        "Cross-reference the target GJ 486 b in the NASA Exoplanet Catalog.",
+        "Review original transmission spectroscopy datasets published via STScI MAST portal.",
+        "Confirm authorship among listed astrophysics research team members."
+      ],
+      "limitations": [
+        "Astronomical spectroscopy continues to receive follow-up observations to further disentangle starspot contamination."
+      ],
+      "model_version": "gemini-3.8-flash (TruthLens v1.2)",
+      "prediction_date": "2026-10-11T07:05:02.920Z",
+      "is_demo": true
+    },
+    {
+      "prediction_id": "pred_sample_fake_02",
+      "news_id": "art_sample_fake_02",
+      "user_id": "usr_demo_002",
+      "predicted_label": "FAKE",
+      "confidence_score": 0.98,
+      "summary": "Classic medical miracle cure hoax exhibiting severe conspiracy framing, untraceable claims, and zero clinical trial corroboration.",
+      "explanation": "This submission demonstrates classic characteristics of predatory health misinformation. There is no biological mechanism by which a single botanical compound can eradicate diverse advanced malignancies across varying tissue types in 48 hours. No clinical trials exist in PubMed, ClinicalTrials.gov, or WHO registries for the alleged \"Miracle Sunberry\". The claim employs psychological manipulation tropes: an anonymous whistleblower, suppression conspiracies (\"Big Pharma bans it\"), and urgent emotional fear appeal.",
+      "key_claims": [
+        "An unidentified berry eradicates all stage 4 cancer tumors in 48 hours",
+        "Global medical community and governments are executing a coordinated censorship campaign",
+        "Anonymous physician fled the country after discovering the cure"
+      ],
+      "warning_signs": [
+        "Sensationalist miracle cure promise with zero clinical evidence",
+        "Classic conspiracy trope (\"Big Pharma suppressed this secret\")",
+        "Unverifiable anonymous sources with no institutional affiliation",
+        "Emotionally manipulative and urgent clickbait language",
+        "Complete absence of peer-reviewed clinical trial references"
+      ],
+      "evidence_sources": [
+        {
+          "title": "National Cancer Institute (NCI) & WHO Guidelines on Cancer Therapeutics",
+          "url": "https://www.cancer.gov",
+          "credibility_note": "Official international oncology standards; no such compound is recognized."
+        },
+        {
+          "title": "U.S. FDA Health Fraud Product Warnings Database",
+          "credibility_note": "Monitors deceptive unapproved botanical cancer cures and misleading health scams."
+        }
+      ],
+      "verification_steps": [
+        "Search PubMed (pubmed.ncbi.nlm.nih.gov) for clinical trials containing the compound name.",
+        "Consult the FDA Health Fraud Product Database for enforcement alerts.",
+        "Review oncological advisory warnings from major cancer research centers."
+      ],
+      "limitations": [
+        "Analysis evaluates textual claims and medical consensus databases; specific viral blog domain registration records were not queried."
+      ],
+      "model_version": "gemini-3.8-flash (TruthLens v1.2)",
+      "prediction_date": "2026-10-13T07:05:02.920Z",
+      "is_demo": true
+    },
+    {
+      "prediction_id": "pred_sample_verify_03",
+      "news_id": "art_sample_verify_03",
+      "user_id": "usr_demo_002",
+      "predicted_label": "NEEDS VERIFICATION",
+      "confidence_score": 0.65,
+      "summary": "Developing local governance claim with unconfirmed anonymous sourcing and pending official public records.",
+      "explanation": "The report blends plausible municipal energy transition concepts (geothermal district heating) with uncorroborated procedural assertions (closed-door midnight bond votes bypassing environmental review). Because municipal bond issues require statutory disclosures and public agenda notices, this story cannot be confirmed or debunked without official city council minutes, state bond filings, or signed public records.",
+      "key_claims": [
+        "City council authorized $450 million in emergency municipal bonds",
+        "Closed-door midnight session allegedly bypassed environmental review",
+        "Spokespersons have neither published minutes nor issued an outright denial"
+      ],
+      "warning_signs": [
+        "Sourced solely from unverified social media leaks and anonymous messaging channels",
+        "Alleges emergency closed-door procedural moves without documentary evidence",
+        "Lack of named council members, ordinance docket numbers, or official press releases"
+      ],
+      "evidence_sources": [
+        {
+          "title": "Municipal Registry & City Council Docket Archives",
+          "credibility_note": "Primary public record authority for municipal legislative votes."
+        }
+      ],
+      "verification_steps": [
+        "Check the official City Clerk meeting agendas and voting records for recorded roll calls.",
+        "Inspect the Municipal Securities Rulemaking Board (EMMA) for official bond issuance filings.",
+        "Wait for verified on-the-record statements from accredited regional investigative journalists."
+      ],
+      "limitations": [
+        "Local municipal ordinances depend on municipal public record access that may take days to publish."
+      ],
+      "model_version": "gemini-3.8-flash (TruthLens v1.2)",
+      "prediction_date": "2026-10-15T07:05:02.920Z",
+      "is_demo": true
+    },
+    {
+      "prediction_id": "pred_f809853d-3be1-45cd-8279-ec9eeaa8654b",
+      "news_id": "art_8189c239-847a-423c-a427-5bfb2d47ad06",
+      "user_id": "usr_edaa4805-d158-41d7-b123-c33a778ac87b",
+      "predicted_label": "NEEDS VERIFICATION",
+      "confidence_score": 0.85,
+      "summary": "The claim lacks essential context, fails to specify which entity 'CJP' refers to, and offers no verifiable documentation or evidence for the assertion that it is funded by the US or George Soros.",
+      "explanation": "The submission consists of vague, single-sentence claims alleging that 'CJP' is funded by America and backed by George Soros. The acronym 'CJP' could refer to multiple distinct entities, such as the Chief Justice of Pakistan, the Indian human rights NGO Citizens for Justice and Peace, or other organizations. Allegations linking domestic figures or NGOs to foreign governments or George Soros are frequent political talking points and disinformation tropes that require concrete financial disclosures, official foreign contribution filings (such as FCRA filings in India), or investigative records to verify. Without specifying the entity or providing substantiating primary sources, the assertion remains unproven and speculative.",
+      "key_claims": [
+        "CJP is funded by the United States.",
+        "CJP is backed by US-based financier George Soros."
+      ],
+      "warning_signs": [
+        "Ambiguous acronym without full identification of the organization or individual.",
+        "Zero supporting evidence, documentation, or named sources provided.",
+        "Reliance on common conspiratorial framing involving foreign interference and George Soros."
+      ],
+      "evidence_sources": [
+        {
+          "title": "Open Society Foundations Financial and Grant Disclosures",
+          "credibility_note": "Official registry of global grants awarded by George Soros's philanthropic network.",
+          "snippet": "Provides searchable public databases of grantees and funded initiatives worldwide.",
+          "url": "https://www.opensocietyfoundations.org"
+        },
+        {
+          "title": "Foreign Contribution Regulation Act (FCRA) Online Services (India)",
+          "credibility_note": "Indian Ministry of Home Affairs statutory portal for registered NGOs receiving foreign funds.",
+          "snippet": "Maintains statutory filings and status updates for organizations like Citizens for Justice and Peace (CJP).",
+          "url": "https://fcraonline.nic.in"
+        }
+      ],
+      "verification_steps": [
+        "Clarify which specific organization or office 'CJP' designates in this context.",
+        "Check official foreign contribution disclosures and tax filings for the relevant organization.",
+        "Search Open Society Foundations award directories to verify if any grants have ever been disbursed to the entity in question."
+      ],
+      "limitations": [
+        "The extreme brevity and ambiguity of the text prevent definitive refutation of a specific named legal entity.",
+        "Automated evaluation cannot independently audit private or off-the-books financial transactions without official investigative records."
+      ],
+      "model_version": "gemini-3.8-flash (TruthLens v1.2)",
+      "prediction_date": "2026-10-16T07:25:35.249Z",
+      "is_demo": false
+    },
+    {
+      "prediction_id": "pred_24cc329e-3aab-47f7-92e3-a22284a0566e",
+      "news_id": "art_1512069d-dc94-4e23-9c7c-a373f05f8d79",
+      "user_id": "usr_edaa4805-d158-41d7-b123-c33a778ac87b",
+      "predicted_label": "FAKE",
+      "confidence_score": 0.99,
+      "summary": "The claim that an Amazonian berry cures all stage 4 cancers in 48 hours is a fabricated medical hoax lacking any biological plausibility, clinical evidence, or peer-reviewed documentation.",
+      "explanation": "Cancer is a complex group of hundreds of distinct diseases characterized by uncontrolled cellular division, making a single universal cure that eradicates 100% of stage 4 tumors in 48 hours scientifically implausible. The narrative relies entirely on classic medical conspiracy tropes, including an unidentifiable anonymous whistleblower, claims of suppressed knowledge by 'Big Pharma,' and urgent calls for viral social sharing ('Share this before it gets deleted!'). No medical agency, oncology society, or peer-reviewed literature records the existence or efficacy of the claimed 'Miracle Sunberry.' Promoting unverified miracle cures poses severe health risks if patients delay or forgo evidence-based medical treatment.",
+      "key_claims": [
+        "An Amazonian plant named 'Miracle Sunberry' eliminates 100% of stage 4 malignant tumors within 48 hours.",
+        "An anonymous whistleblower doctor fled the country after discovering this cure.",
+        "Pharmaceutical executives and governments colluded to destroy all plantations and censor medical journals to protect profits."
+      ],
+      "warning_signs": [
+        "Sensational and scientifically implausible medical claims ('cures all stage 4 cancers in 48 hours').",
+        "Reliance on anonymous and unverifiable sources ('anonymous whistleblower doctor').",
+        "Classic conspiracy theory tropes ('Big Pharma suppression', 'destroy all plantations').",
+        "Urgent call-to-action designed to trigger emotional viral sharing ('Share this before it gets deleted!').",
+        "Complete absence of peer-reviewed scientific citations or verifiable botanical names."
+      ],
+      "evidence_sources": [
+        {
+          "title": "National Cancer Institute (NCI) - Cancer Treatment Myths and Facts",
+          "credibility_note": "Official U.S. government medical research agency",
+          "snippet": "There is no single herbal cure for cancer. Claims of fast, painless, or 100% effective universal cures are hallmarks of healthcare fraud.",
+          "url": "https://www.cancer.gov"
+        },
+        {
+          "title": "American Cancer Society - Evaluating Alternative Cancer Therapies",
+          "credibility_note": "Leading global oncology non-profit organization",
+          "snippet": "Unproven methods that promise quick, universal cures can be dangerous, especially if they cause individuals to delay or discontinue standard medical care.",
+          "url": "https://www.cancer.org"
+        },
+        {
+          "title": "U.S. Food and Drug Administration (FDA) - Health Fraud Scams",
+          "credibility_note": "Federal regulatory agency monitoring fraudulent medical claims",
+          "snippet": "The FDA warns consumers against buying products promoted as miracle cures, particularly those alleging to cure serious diseases like cancer without approved clinical trials.",
+          "url": "https://www.fda.gov"
+        }
+      ],
+      "verification_steps": [
+        "Consult trusted scientific repositories such as PubMed or ClinicalTrials.gov to verify whether clinical trials exist for the cited botanical extract.",
+        "Check regulatory warnings on the FDA Health Fraud Scams database or FTC consumer alerts.",
+        "Review consensus guidance from recognized oncology institutions such as the American Cancer Society or World Health Organization."
+      ],
+      "limitations": [
+        "Automated natural language evaluation based on existing oncology consensus and known disinformation patterns rather than real-time biological laboratory testing.",
+        "Independent physical verification of the alleged botanical specimen was not conducted because no taxonomic or scientific name was provided."
+      ],
+      "model_version": "gemini-3.8-flash (TruthLens v1.2)",
+      "prediction_date": "2026-10-16T07:32:29.270Z",
+      "is_demo": false
+    },
+    {
+      "prediction_id": "pred_04016f29-5829-483a-bf6b-d6e0c03ec48e",
+      "news_id": "art_b14374be-6f15-4d7f-acd1-7c1ec57b859d",
+      "user_id": "usr_admin_001",
+      "predicted_label": "REAL",
+      "confidence_score": 0.99,
+      "summary": "The article accurately reports the successful soft landing of ISRO's Chandrayaan-3 Vikram lander near the Moon's south polar region on August 23, 2023.",
+      "explanation": "The claims are corroborated by primary documentation from the Indian Space Research Organisation (ISRO), real-time international telemetric tracking, and global news coverage. On August 23, 2023, the Vikram lander successfully executed its powered descent from approximately 30 kilometers above the lunar surface to make a soft touchdown at roughly 69.37° S latitude, making India the fourth nation to successfully land on the Moon and the first to reach the lunar south polar region.",
+      "key_claims": [
+        "ISRO accomplished a soft landing of the Chandrayaan-3 Vikram lander on August 23, 2023.",
+        "The landing occurred in the lunar southern polar region around 69.37 degrees South latitude.",
+        "The powered descent phase executed from an altitude of 30 kilometers down to the surface."
+      ],
+      "warning_signs": [],
+      "evidence_sources": [
+        {
+          "title": "ISRO Official Mission Updates - Chandrayaan-3",
+          "credibility_note": "Primary official space agency portal",
+          "snippet": "Chandrayaan-3's Vikram Lander touched down successfully near the lunar south pole on August 23, 2023 at 18:04 IST.",
+          "url": "https://www.isro.gov.in/Chandrayaan3.html"
+        },
+        {
+          "title": "NASA Solar System Exploration - Chandrayaan-3 Mission",
+          "credibility_note": "International space agency documentation",
+          "snippet": "NASA and international space agencies confirmed and congratulated ISRO on the successful soft landing of Chandrayaan-3 on the Moon."
+        }
+      ],
+      "verification_steps": [
+        "Cross-reference with ISRO's primary mission archives and press releases.",
+        "Examine official tracking data and acknowledgments from international space agencies like NASA and ESA.",
+        "Check reports from established international scientific journals such as Nature and Science."
+      ],
+      "limitations": [
+        "Automated evaluation based on existing verified knowledge and published official data rather than direct physical observation."
+      ],
+      "model_version": "gemini-3.8-flash (TruthLens v1.2)",
+      "prediction_date": "2026-10-16T07:57:51.822Z",
+      "is_demo": false
+    }
+  ],
+  "feedbacks": [
+    {
+      "feedback_id": "fb_sample_01",
+      "user_id": "usr_demo_002",
+      "user_name": "Academic Researcher",
+      "user_email": "student@truthlens.ai",
+      "prediction_id": "pred_sample_fake_02",
+      "article_title": "Secret Miracle Fruit Discovered in Rainforest Cures All Stage 4 Cancers in 48 Hours, Big Pharma Bans It",
+      "predicted_label": "FAKE",
+      "feedback_text": "Spot-on analysis. This exact claim was circulating on WhatsApp groups targeting elderly family members.",
+      "feedback_category": "Correct Prediction",
+      "supporting_source_url": "https://www.cancer.gov/about-cancer/treatment/cam",
+      "feedback_date": "2026-10-14T07:05:02.920Z"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "TruthLens AI – Fake News Detection System",
+  "description": "AI-assisted fake news detection and factual credibility analysis platform powered by Google Gemini.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
