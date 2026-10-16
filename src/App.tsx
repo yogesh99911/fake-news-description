@@ -8,7 +8,7 @@ import { AnalyzePage } from './pages/AnalyzePage.js';
 import { AnalysisResultPage } from './pages/AnalysisResultPage.js';
 import { DashboardPage } from './pages/DashboardPage.js';
 import { HistoryPage } from './pages/HistoryPage.js';
-import { AboutPage } from './pages/AboutPage.js';
+
 import { AdminPage } from './pages/AdminPage.js';
 import { NewsArticle, Prediction, ArticleHistoryItem } from './types/index.js';
 import { Sparkles, AlertCircle, RotateCcw } from 'lucide-react';
@@ -94,7 +94,7 @@ function MainApp() {
 
   const [currentView, setCurrentView] = useState<string>(() => {
     try {
-      const savedView = sessionStorage.getItem('truthlens_current_view') || 'landing';
+      const savedView = sessionStorage.getItem('truthlens_current_view') === 'about' ? 'landing' : sessionStorage.getItem('truthlens_current_view') || 'landing';
       // If view was 'result' but there is no active article stored, default to 'analyze' or 'landing'
       if (savedView === 'result') {
         const savedArt = sessionStorage.getItem('truthlens_active_article');
@@ -238,7 +238,7 @@ function MainApp() {
             />
           )}
 
-          {currentView === 'about' && <AboutPage />}
+
 
           {currentView === 'admin' && (
             user?.role === 'admin' ? (
