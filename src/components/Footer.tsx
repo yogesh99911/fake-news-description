@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         {/* Bottom Credits */}
         <div className="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <p>© {new Date().getFullYear()} TruthLens AI – Academic Demonstration System.</p>
+          <p>© {new Date().getFullYear()} TruthLens AI.</p>
           <div className="flex items-center gap-4 text-xs">
             <span>Built with React + Vite + Tailwind CSS + Express + configurable AI</span>
           </div>
