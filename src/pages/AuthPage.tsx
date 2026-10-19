@@ -242,11 +242,11 @@ export const AuthPage: React.FC<AuthPageProps> = ({ onSuccess }) => {
             </button>
           </form>
 
-          {/* Academic One-Click Demo Logins */}
+          {/* Quick demo logins */}
           <div className="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 text-center">
             <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3 flex items-center justify-center gap-1">
               <Sparkles size={13} className="text-teal-500" />
-              One-Click Viva & Academic Testing
+              Quick demo sign-in
             </p>
             <div className="grid grid-cols-2 gap-2">
               <button

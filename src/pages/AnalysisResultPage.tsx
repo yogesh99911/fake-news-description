@@ -54,7 +54,7 @@ export const AnalysisResultPage: React.FC<AnalysisResultPageProps> = ({
 Headline: ${article?.title || 'Untitled Article'}
 Date: ${reportDate}
 Model Assessment: ${prediction?.predicted_label || 'UNVERIFIED'} (${Math.round((prediction?.confidence_score || 0) * 100)}% Confidence)
-Model Version: ${prediction?.model_version || 'gemini-3.8-flash'}
+Model Version: ${prediction?.model_version || 'Not provided'}
 
 SHORT VERDICT:
 ${prediction?.summary || 'No summary available.'}
@@ -141,7 +141,7 @@ ${limitations.length > 0 ? limitations.map((l) => `- ${l}`).join('\n') : '- Auto
                 </span>
                 {prediction.is_demo && (
                   <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-sm bg-purple-500/20 text-purple-300 border border-purple-500/40">
-                    {isFreeDemo ? 'Free Demo · No AI' : 'Academic Demo'}
+                    {isFreeDemo ? 'Free Demo · No AI' : 'Demo Sample'}
                   </span>
                 )}
               </div>
@@ -213,7 +213,7 @@ ${limitations.length > 0 ? limitations.map((l) => `- ${l}`).join('\n') : '- Auto
           <div>
             <h3 className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-2 flex items-center gap-2">
               <FileCheck size={16} className="text-teal-500" />
-              Detailed Model Rationale & Assessment
+              Why this result
             </h3>
             <p className="text-sm leading-relaxed text-slate-800 dark:text-slate-200 whitespace-pre-line bg-slate-50 dark:bg-slate-800/80 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
               {prediction.explanation}
@@ -226,7 +226,7 @@ ${limitations.length > 0 ? limitations.map((l) => `- ${l}`).join('\n') : '- Auto
             <div className="bg-slate-50 dark:bg-slate-800/60 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-3 flex items-center gap-1.5">
                 <ListOrdered size={15} className="text-blue-500" />
-                Key Factual Assertions Identified
+                Main claims
               </h4>
               {keyClaims.length > 0 ? (
                 <ul className="space-y-2 text-xs text-slate-700 dark:text-slate-300">
@@ -246,7 +246,7 @@ ${limitations.length > 0 ? limitations.map((l) => `- ${l}`).join('\n') : '- Auto
             <div className="bg-slate-50 dark:bg-slate-800/60 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-3 flex items-center gap-1.5">
                 <AlertTriangle size={15} className="text-amber-500" />
-                Linguistic & Heuristic Warning Signs
+                Possible warning signs
               </h4>
               {warningSigns.length > 0 ? (
                 <ul className="space-y-2 text-xs text-slate-700 dark:text-slate-300">
@@ -268,7 +268,7 @@ ${limitations.length > 0 ? limitations.map((l) => `- ${l}`).join('\n') : '- Auto
             <div className="bg-slate-50 dark:bg-slate-800/60 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-3 flex items-center gap-1.5">
                 <Globe size={15} className="text-teal-500" />
-                Referenced Verification Sources & Consensus
+                Sources checked
               </h4>
               <div className="space-y-3">
                 {evidenceSources.map((src, idx) => (
@@ -311,7 +311,7 @@ ${limitations.length > 0 ? limitations.map((l) => `- ${l}`).join('\n') : '- Auto
           <div className="bg-teal-50/50 dark:bg-teal-950/20 p-5 rounded-xl border border-teal-200/80 dark:border-teal-900/60">
             <h4 className="text-xs font-bold uppercase tracking-wider text-teal-900 dark:text-teal-300 mb-3 flex items-center gap-1.5">
               <Check size={16} className="text-teal-600" />
-              Recommended Steps for Independent Human Verification
+              How you can verify
             </h4>
             <ol className="space-y-2 text-xs text-slate-700 dark:text-slate-300 list-decimal list-inside">
               {verificationSteps.map((step, idx) => (
@@ -322,11 +322,11 @@ ${limitations.length > 0 ? limitations.map((l) => `- ${l}`).join('\n') : '- Auto
             </ol>
           </div>
 
-          {/* Model Limitations & Academic Footnote */}
+          {/* Model limitations */}
           <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-1.5">
             <div className="flex items-center gap-1.5 font-bold text-slate-700 dark:text-slate-300">
               <Info size={14} />
-              Limitations & Epistemic Boundaries
+              Limitations
             </div>
             <ul className="list-disc list-inside space-y-1">
               {limitations.map((lim, idx) => (

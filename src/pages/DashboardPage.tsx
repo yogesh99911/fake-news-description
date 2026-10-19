@@ -90,7 +90,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
             Welcome back, {user?.name || 'Researcher'}
           </h1>
           <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
-            Monitor factual evaluation patterns, review confidence distributions, and track your ongoing audit submissions.
+            Review your past analyses and the results you have saved.
           </p>
         </div>
 
@@ -123,7 +123,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
           <p className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tabular-nums">
             {stats?.totalAnalyzed ?? 0}
           </p>
-          <span className="text-[11px] text-slate-400 mt-1 block">Articles audited</span>
+          <span className="text-[11px] text-slate-400 mt-1 block">Articles analyzed</span>
         </div>
 
         {/* Real Count */}
@@ -385,7 +385,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
               Your Recent Model Feedback Submissions
             </h3>
             <p className="text-xs text-slate-500">
-              Audit contributions helping evaluate model accuracy
+              Feedback you have shared about past results
             </p>
           </div>
           <div className="divide-y divide-slate-100 dark:divide-slate-800">

@@ -25,24 +25,24 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
       label: 'REAL',
       confidence: 0.94,
       title: 'NASA James Webb Space Telescope Detects Water Vapor in Rocky Exoplanet Atmosphere',
-      summary: 'Accurately reflects verified peer-reviewed publications from NASA Jet Propulsion Laboratory and Nature Astronomy.',
-      signs: ['Cross-referenced in NASA exoplanet archive', 'Maintains rigorous scientific caveats'],
+      summary: 'This example is based on a published space telescope finding. Check the linked sources for the exact claim and context.',
+      signs: ['Look for the original research', 'Check what the source actually confirms'],
       source: 'NASA JPL & STScI MAST Archive',
     },
     fake: {
       label: 'FAKE',
       confidence: 0.98,
       title: 'Miracle Rainforest Sunberry Eliminates 100% of Stage 4 Cancer Tumors in 48 Hours, Big Pharma Bans It',
-      summary: 'Classic predatory medical misinformation exhibiting untraceable claims, conspiracy tropes, and zero clinical trials.',
-      signs: ['Miracle cure promise with zero clinical evidence', 'Conspiracy tropes alleging suppression', 'Anonymous untraceable sources'],
+      summary: 'This example makes a strong medical promise without showing reliable evidence.',
+      signs: ['No clinical evidence is cited', 'The claim promises a miracle cure', 'The source is not identified'],
       source: 'Unverified Viral Health Blog',
     },
     verify: {
       label: 'NEEDS VERIFICATION',
       confidence: 0.65,
       title: 'Metropolitan Council Allegedly Passes $450M Midnight Bond Ordinance for Geothermal Heating Grid',
-      summary: 'Developing local governance claim with unconfirmed anonymous messaging leaks and pending public docket minutes.',
-      signs: ['Anonymous Telegram leak source', 'Missing official city clerk voting records', 'Spokespeople have not yet issued confirmation'],
+      summary: 'This example describes a local decision but does not point to a public record.',
+      signs: ['No official meeting minutes are linked', 'The source is anonymous', 'The claim needs confirmation'],
       source: 'Local Leaks Messaging Channel',
     },
   };
@@ -91,10 +91,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-xs font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400 mb-2">
-            Verification Pipeline
+            How it works
           </h2>
           <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-            Three Steps to Factual Clarity
+            Three steps
           </h3>
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">
             Each article is reviewed and saved so you can return to its result later.
@@ -110,7 +110,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               Submit News
             </h4>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Paste a headline and full article text, or enter an article URL for our SSRF-safe crawler to extract accessible paragraphs.
+              Paste the article text or enter a link. The app can try to extract text from pages that allow access.
             </p>
           </div>
 
@@ -119,10 +119,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               2
             </div>
             <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
-              AI Analysis & Grounding
+              AI review
             </h4>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                  The configured AI model reviews assertions, internal consistency, and sensationalism. It may rely on learned knowledge and does not independently verify live sources.
+              The app reviews the text and may use live web sources, depending on the provider setup.
             </p>
           </div>
 
@@ -131,7 +131,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               3
             </div>
             <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
-              Review & Audit Trail
+              Read the result
             </h4>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Receive a classification (REAL, FAKE, or NEEDS VERIFICATION), confidence estimate, warning indicators, and actionable steps to cross-check.
@@ -145,10 +145,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
-              Interactive Classification Previews
+              Sample results
             </h3>
             <p className="text-xs text-slate-500 mt-1">
-              Select a category to preview how TruthLens evaluates differing news credibility scenarios.
+              Click a tab to see an example of each result type.
             </p>
 
             <div className="inline-flex p-1 bg-white dark:bg-slate-800 rounded-xl border border-slate-300 dark:border-slate-700 mt-4 gap-1">
@@ -160,7 +160,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-900'
                 }`}
               >
-                Real News Sample
+                Real sample
               </button>
               <button
                 onClick={() => setActiveTab('fake')}
@@ -170,7 +170,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-900'
                 }`}
               >
-                Fake News Sample
+                Fake sample
               </button>
               <button
                 onClick={() => setActiveTab('verify')}
@@ -180,7 +180,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-900'
                 }`}
               >
-                Needs Verification Sample
+                Needs verification
               </button>
             </div>
           </div>
@@ -194,7 +194,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                 size="md"
               />
               <span className="text-xs text-slate-500">
-                Source Reference: <span className="font-semibold text-slate-700 dark:text-slate-300">{sampleCards[activeTab].source}</span>
+                Example source: <span className="font-semibold text-slate-700 dark:text-slate-300">{sampleCards[activeTab].source}</span>
               </span>
             </div>
 
@@ -208,7 +208,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
 
             <div className="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 mb-4">
               <h5 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
-                Identified Indicators & Warning Signs
+                What to check
               </h5>
               <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-400">
                 {sampleCards[activeTab].signs.map((sign, idx) => (

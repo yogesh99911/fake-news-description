@@ -151,7 +151,7 @@ export const FeedbackModal: React.FC<FeedbackModalProps> = ({
               className="w-full text-sm p-3 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-hidden dark:bg-slate-800 dark:text-white"
             />
             <p className="text-[11px] text-slate-500 mt-0.5">
-              Feedback is stored for academic peer review and model auditing. It does not automatically override truth.
+              Your feedback is saved with the analysis. It does not automatically change the result.
             </p>
           </div>
 

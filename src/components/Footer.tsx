@@ -8,8 +8,8 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="w-full bg-slate-950 text-slate-400 border-t border-slate-800 text-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
           {/* Col 1: Brand & Purpose */}
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center gap-2">
@@ -23,10 +23,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <p className="text-xs text-slate-400 leading-relaxed max-w-md">
               TruthLens AI helps users review news claims with AI-assisted analysis and related web sources. Model assessments are estimates, not proof of truth.
             </p>
-            <div className="pt-2 flex items-center gap-2 text-xs text-slate-400">
-              <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>REST API Operational • AI provider depends on deployment configuration</span>
-            </div>
           </div>
 
           {/* Col 2: Navigation */}
@@ -45,18 +41,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('dashboard')}
-                  className="hover:text-teal-400 transition-colors"
-                >
-                  User Dashboard
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={() => onNavigate('history')}
                   className="hover:text-teal-400 transition-colors"
                 >
-                  Analysis History & CSV
+                  History
                 </button>
               </li>
               
@@ -67,20 +55,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         {/* Disclaimer Banner */}
-        <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-400 flex items-start gap-3 mb-6">
+        <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-400 flex items-start gap-3 mb-6">
           <AlertCircle size={18} className="text-amber-400 shrink-0 mt-0.5" />
           <div>
-            <span className="font-semibold text-slate-300">AI Disclaimer:</span>{' '}
-            Automated language model analysis is an assistive tool, not proof of absolute truth. Model assessments represent pattern recognition over textual claims and known reporting databases. News consumers must cross-reference primary sources, official public registers, and independent journalistic reporting before making factual determinations.
+            <span className="font-semibold text-slate-300">Please check the sources.</span>{' '}
+            An AI result can be wrong and should not be treated as proof.
           </div>
         </div>
 
         {/* Bottom Credits */}
         <div className="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
           <p>© {new Date().getFullYear()} TruthLens AI.</p>
-          <div className="flex items-center gap-4 text-xs">
-            <span>Built with React + Vite + Tailwind CSS + Express + configurable AI</span>
-          </div>
         </div>
       </div>
     </footer>

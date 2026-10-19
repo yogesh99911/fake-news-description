@@ -203,7 +203,7 @@ function MainApp() {
                   No Active Analysis Selected
                 </h2>
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  Submit a new article for verification or pick a record from your history to view its full credibility audit report.
+                  Submit a new article or open a past result from your history.
                 </p>
                 <div className="flex justify-center gap-3 pt-2">
                   <button
@@ -247,7 +247,7 @@ function MainApp() {
               <div className="max-w-md mx-auto my-20 p-8 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 text-center space-y-3">
                 <h2 className="font-bold text-base text-rose-600">Access Restricted</h2>
                 <p className="text-xs text-slate-500">
-                  Administrator credentials are required to view the system audit and administration panel.
+                  Sign in with an administrator account to open this page.
                 </p>
                 <button
                   onClick={() => handleNavigate('landing')}

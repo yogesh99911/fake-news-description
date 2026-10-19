@@ -39,7 +39,7 @@ export const AnalyzePage: React.FC<AnalyzePageProps> = ({
   const [fetchingUrl, setFetchingUrl] = useState(false);
   const [urlFetchSuccess, setUrlFetchSuccess] = useState(false);
 
-  // Academic Samples
+  // Sample articles for trying the analyzer
   const [samples, setSamples] = useState<DemoSample[]>([]);
   const [samplesLoading, setSamplesLoading] = useState(false);
 
@@ -71,10 +71,10 @@ export const AnalyzePage: React.FC<AnalyzePageProps> = ({
   }, [analyzing]);
 
   const loadingMessages = [
-    'Connecting to AI credibility analysis engine...',
-    'Evaluating factual claims, sensationalism, and linguistic markers...',
-    'Cross-referencing scientific registries & verification heuristics...',
-    'Synthesizing structured credibility audit report...',
+    'Connecting to the analysis service...',
+    'Reviewing the main claims...',
+    'Checking available sources...',
+    'Preparing your result...',
   ];
 
   // Character & word counters
@@ -114,7 +114,7 @@ export const AnalyzePage: React.FC<AnalyzePageProps> = ({
     }
   };
 
-  // Handle Load Academic Sample
+  // Load a sample article into the form
   const handleLoadSample = (sample: DemoSample) => {
     setTitle(sample.title);
     setContent(sample.content);
@@ -179,7 +179,7 @@ export const AnalyzePage: React.FC<AnalyzePageProps> = ({
       <div className="mb-8 text-center max-w-2xl mx-auto">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 text-teal-700 dark:text-teal-300 text-xs font-semibold uppercase tracking-wider mb-2">
           <Sparkles size={13} />
-          Automated Fact Verification Engine
+          News analysis
         </div>
         <h1 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">
           Analyze News Credibility
@@ -227,9 +227,9 @@ export const AnalyzePage: React.FC<AnalyzePageProps> = ({
             </button>
           </div>
 
-          {/* Academic Sample Dropdown */}
+          {/* Sample article dropdown */}
           <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
-            <span className="text-xs text-slate-500 hidden md:inline">Viva Sample:</span>
+            <span className="text-xs text-slate-500 hidden md:inline">Sample:</span>
             <select
               defaultValue=""
               onChange={(e) => {
@@ -239,7 +239,7 @@ export const AnalyzePage: React.FC<AnalyzePageProps> = ({
               className="text-xs bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 text-slate-700 dark:text-slate-200 focus:outline-hidden focus:ring-2 focus:ring-teal-500"
             >
               <option value="" disabled>
-                {samplesLoading ? 'Loading samples...' : 'Load Academic Sample...'}
+                {samplesLoading ? 'Loading samples...' : 'Load a sample...'}
               </option>
               {samples.map((s) => (
                 <option key={s.label} value={s.label}>
@@ -419,14 +419,14 @@ export const AnalyzePage: React.FC<AnalyzePageProps> = ({
               <div className="w-12 h-12 rounded-full border-4 border-teal-500/30 border-t-teal-400 animate-spin mx-auto" />
               <div>
                 <h4 className="font-bold text-base text-white">
-                  Auditing Article Credibility
+                  Analyzing article
                 </h4>
                 <p className="text-xs text-teal-300 font-medium mt-1">
                   {loadingMessages[loadingStep]}
                 </p>
               </div>
               <p className="text-[11px] text-slate-400 leading-relaxed">
-                The AI fact-checking engine is dissecting factual claims and evaluating linguistic sensationalism markers.
+                This can take a few seconds. The result will appear here when it is ready.
               </p>
             </div>
           </div>

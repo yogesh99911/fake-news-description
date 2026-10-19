@@ -1,104 +1,38 @@
-# TruthLens AI – AI-Based Fake News Detection System
-**BSc Computer Science Final Year Project**
+# TruthLens AI
 
-TruthLens AI is an academic web platform designed for AI-assisted news credibility analysis and algorithmic transparency. Powered by Express.js, React 19, TypeScript, Tailwind CSS, and a configurable AI provider, the platform evaluates supplied article text, extracts claims, detects sensationalism, and produces a structured assessment. Model output is not independent live-source verification.
+TruthLens helps users review news claims. Enter a headline and article text, or provide an article link. The app returns an AI-assisted assessment with related sources when available.
 
----
+## What it includes
 
-## 1. Core System Entities & UML Design
+- News analysis using pasted text or an article URL
+- A result page with the verdict, explanation, and source links
+- Sign-in, saved history, dashboard, and feedback
+- Sample articles for trying the app
 
-The system strictly models the entities specified in the project Class Diagram and Object Diagram:
+## Built with
 
-### 1. `User`
-- **Attributes:** `user_id`, `name`, `email`, `password_hash`, `salt`, `role` (`'user' | 'admin'`), `created_at`
-- **Operations:** `register()`, `login()`, `submitNews()`, `provideFeedback()`
-- **Security:** Passwords are cryptographically salted and hashed using PBKDF2 (100,000 iterations, SHA-512). Plaintext passwords are never stored.
+- React, TypeScript, and Vite
+- Node.js, Express, and TypeScript
+- A server-side AI provider (Gemini or Cloudflare Workers AI)
+- JSON file storage for the demo data
 
-### 2. `NewsArticle`
-- **Attributes:** `news_id`, `user_id` [FK], `title`, `content`, `source_name?`, `source_url?`, `input_mode` (`'paste' | 'url'`), `submission_date`
-- **Operations:** `create()`, `getNewsById()`, `getAllNews()`, `delete()`
-- **Cardinality:** `User (1) ──── (0..*) NewsArticle`
+## Run locally
 
-### 3. `Prediction`
-- **Attributes:** `prediction_id`, `news_id` [FK, 1:1], `user_id` [FK], `predicted_label` (`'REAL' | 'FAKE' | 'NEEDS VERIFICATION'`), `confidence_score` (0.0 to 1.0), `summary`, `explanation`, `key_claims[]`, `warning_signs[]`, `evidence_sources[]`, `verification_steps[]`, `limitations[]`, `model_version`, `prediction_date`, `is_demo`
-- **Operations:** `getPredictionById()`, `getPredictionByNewsId()`, `getAllPredictions()`
-- **Cardinality:** `NewsArticle (1) ──── (1) Prediction` (Strict 1:1; duplicate submissions are prevented, and deletion cascades automatically).
+You need Node.js 20 or newer and npm.
 
-### 4. `Feedback`
-- **Attributes:** `feedback_id`, `user_id` [FK], `prediction_id` [FK], `feedback_text`, `feedback_category` (`'Correct Prediction' | 'Incorrect Prediction' | 'Unsure' | 'General Feedback'`), `supporting_source_url?`, `feedback_date`
-- **Operations:** `submitFeedback()`, `getFeedbackById()`, `getAllFeedbacks()`
-- **Cardinality:** `User (1) ──── (0..*) Feedback` and `Prediction (1) ──── (0..*) Feedback`
-
----
-
-## 2. Technology Stack
-
-- **Frontend:** React 19, TypeScript, Vite, Tailwind CSS v4, Lucide React icons, Recharts (classification distribution & timeline charts).
-- **Backend API:** Node.js, Express, TypeScript (`tsx server.ts`).
-- **AI Engine:** Optional Google Gemini or Cloudflare Workers AI provider with structured JSON responses.
-- **Persistence Engine:** JSON relational database with atomic file transactions (`data/truthlens.json`), foreign key integrity, and cascading deletions.
-- **Security & Crawling:** SSRF-protected URL crawler blocking RFC-1918 subnets, cloud metadata IPs, and localhost; PBKDF2 password hashing; timing-safe comparisons; Bearer token authorization.
-
----
-
-## 3. Pre-Configured Test Accounts (Classroom / Viva Demonstration)
-
-For testing and examination presentations, TruthLens includes seeded demonstration accounts:
-
-| Role | Email | Password | Permissions |
-| :--- | :--- | :--- | :--- |
-| **Researcher (Student)** | `student@truthlens.ai` | `DemoPass123!` | Standard user: submit articles, view history, provide feedback |
-| **System Administrator** | `admin@truthlens.ai` | `AdminPass123!` | Elevated admin: audit all reviews, dispute rates, reset demo data |
-
----
-
-## 4. Setup & Local Execution
-
-### Prerequisites
-- Node.js (v20+ recommended)
-- npm (v9+)
-- An optional AI provider: Gemini (`GEMINI_API_KEY`) or Cloudflare Workers AI (`CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN`). With neither configured, the app runs in an honest no-AI demo mode.
-
-### Installation & Run Commands
 ```bash
-# 1. Install dependencies
 npm install
-
-# 2. Run system test suite (14 automated unit and integration tests)
-npm test
-
-# 3. Start development server (serves Vite frontend + Express backend on port 3000)
 npm run dev
-
-# 4. Production build
-npm run build
-npm start
 ```
 
----
+Set the AI provider's environment variables on the server. See `.env.example` for the supported options. Keep API keys in your local environment; do not commit them to GitHub.
 
-## 5. Automated Verification & Test Results
+Create a production frontend build with:
 
-The included automated test suite (`tests/system.test.ts`) verifies 14 critical test cases:
-1. `[PASS]` Password hashing and salt verification (PBKDF2 SHA-512)
-2. `[PASS]` Rejection of invalid password credentials
-3. `[PASS]` Session token generation and user association
-4. `[PASS]` Database initialization and demo account seeding
-5. `[PASS]` New user registration
-6. `[PASS]` Article submission and entity creation (`User 1:N NewsArticle`)
-7. `[PASS]` Prediction persistence (`NewsArticle 1:1 Prediction`)
-8. `[PASS]` Strict 1:1 relationship enforcement between Article and Prediction
-9. `[PASS]` Feedback submission linked to prediction
-10. `[PASS]` Feedback foreign key integrity
-11. `[PASS]` User-specific history retrieval and search filtering
-12. `[PASS]` Cascading deletion (deleting an Article purges its 1:1 Prediction and child Feedbacks)
-13. `[PASS]` Access authorization: blocking unauthorized access to private records
-14. `[PASS]` Administrative authorization: permitting admin audit overviews
+```bash
+npm run build
+```
 
----
+## Note
 
-## 6. Academic Disclaimer & Limitations
-
-- **Language Model Asymmetry:** An AI assessment is an assistive classification based on linguistic patterns, rhetorical markers, and training knowledge. It does not constitute legal or investigative proof of ground truth.
-- **Confidence Metrics:** Confidence scores represent the model's internal assessment certainty and are not mathematically calibrated real-world probabilities.
-- **Live Breaking News:** Developing events with absent primary sources are labeled `NEEDS VERIFICATION` by design to prevent hallucinated certainty.
+AI results can be wrong and are not proof that a claim is true or false. Open the source links and verify important claims independently. Demo data uses JSON file storage and may not persist if the hosting service replaces its filesystem.

@@ -69,7 +69,7 @@ export const AdminPage: React.FC = () => {
             </span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-black">
-            System Overview & Audit Panel
+            Admin overview
           </h1>
           <p className="text-xs sm:text-sm text-slate-300">
             Monitor aggregated platform predictions, review disputed labels, and manage sample datasets for presentations.
@@ -89,7 +89,7 @@ export const AdminPage: React.FC = () => {
             className="px-4 py-2.5 rounded-xl text-xs font-bold bg-purple-600 hover:bg-purple-500 text-white shadow-md transition-colors flex items-center gap-2"
           >
             <RotateCcw size={14} />
-            Reset Academic Demo Dataset
+            Reset demo data
           </button>
         </div>
       </div>
@@ -169,7 +169,7 @@ export const AdminPage: React.FC = () => {
         <div className="p-5 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h3 className="font-bold text-sm text-slate-900 dark:text-white">
-              User Feedback & Prediction Audit Submissions
+              Feedback and reports
             </h3>
             <p className="text-xs text-slate-500">
               Review human evaluations and user-submitted counter-evidence
@@ -266,8 +266,8 @@ export const AdminPage: React.FC = () => {
       {/* Confirmation Modal */}
       <ConfirmModal
         isOpen={resetModalOpen}
-        title="Reset Academic Demo Dataset?"
-        message="This will re-initialize the baseline demonstration articles, sample predictions, and default test accounts (student@truthlens.ai and admin@truthlens.ai). This is ideal for conducting a fresh classroom viva demonstration."
+        title="Reset demo data?"
+        message="This will restore the example articles, sample predictions, and default test accounts. Any demo changes you have made will be replaced."
         confirmLabel="Reset Dataset"
         isDestructive={false}
         onConfirm={handleResetDemoData}
