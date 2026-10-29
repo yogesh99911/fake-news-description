@@ -5,7 +5,8 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/fake-news-description/',
+    // GitHub Pages serves this project under its repository path; Render serves it at the domain root.
+    base: process.env.DEPLOY_TARGET === 'render' ? '/' : '/fake-news-description/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
